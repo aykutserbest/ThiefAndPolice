@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 600447031800592640}
   - component: {fileID: 648871240547249917}
   - component: {fileID: 648871240547249918}
+  - component: {fileID: 4152514381586127771}
   m_Layer: 0
   m_Name: Police
   m_TagString: Player
@@ -421,9 +422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ddc0d0736d38c48825939f6fc91672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterCarryBricks: []
-  brickSlotObj: {fileID: 650305965181283879}
-  brickSlotObjXPos: 0
+  handcuffSlotObj: {fileID: 650305965181283879}
+  characterCarryHandcuffsList: []
+  prisonerList: []
+  handcuffSlotObjXPos: 0
 --- !u!114 &648871240547249919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +506,22 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!54 &4152514381586127771
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648871240547249916}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &648890089484516526
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +723,6 @@ GameObject:
   m_Component:
   - component: {fileID: 655120300232244564}
   - component: {fileID: 643973154612714816}
-  - component: {fileID: 1339711541838227}
   m_Layer: 0
   m_Name: C_man_1_FBX2013
   m_TagString: Player
@@ -807,22 +824,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.026544098, y: -0.000065948814, z: 0.000000006519258}
     m_Extent: {x: 0.055122387, y: 0.019937018, z: 0.02970102}
   m_DirtyAABB: 0
---- !u!54 &1339711541838227
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649252416148486466}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &649268250825814442
 GameObject:
   m_ObjectHideFlags: 0
