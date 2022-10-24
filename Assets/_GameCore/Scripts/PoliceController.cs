@@ -7,10 +7,8 @@ namespace _GameCore.Scripts
 {
     public class PoliceController : CharacterControllerBase<PoliceController>
     {
-        public List<GameObject> prisonerList  = new List<GameObject>();
-        
-        //public List<GameObject> characterCarryHandcuffsList  = new List<GameObject>();
-        
+        public List<ThiefController> prisonerList  = new List<ThiefController>();
+
         public float handcuffSlotObjXPos;
         
         private float m_multiplier = 1;
@@ -31,13 +29,27 @@ namespace _GameCore.Scripts
             m_multiplier++;
         }
         
-        private void GetThiefShackled(GameObject nextPrisoner)
+        private void GetThiefShackled(ThiefController nextPrisoner)
         {
             prisonerList.Add(nextPrisoner);
             var lastHandcuff = characterCarryHandcuffsList.LastOrDefault();
             if (lastHandcuff != null) lastHandcuff.GetComponent<HandcuffController>().MoveToThief(nextPrisoner);
         }
+
+        public Transform GetTargetPrison(int id)
+        {
+            for (int i = 0; i < prisonerList.Count; i++)
+            {
+                if (prisonerList[i].id == id)
+                {
+                    if (i == 0) return gameObject.transform;
+
+                    return prisonerList[i - 1].gameObject.transform;
+                }
+            }
+            
+            return gameObject.transform;
+        }
+
     }
-    
-    
 }

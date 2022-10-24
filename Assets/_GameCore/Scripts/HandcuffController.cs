@@ -33,12 +33,13 @@ namespace _GameCore.Scripts
          MoveHandcuff(PoliceController.Instance.handcuffSlotObj, PoliceController.Instance.handcuffSlotObjXPos);
       }
       
-      public void MoveToThief(GameObject prisoner)
+      public void MoveToThief(ThiefController prisoner)
       {
-         var prisonerController = prisoner.GetComponent<ThiefController>();
          PoliceController.Instance.characterCarryHandcuffsList.Remove(gameObject);
-         prisonerController.characterCarryHandcuffsList.Add(gameObject);
-         MoveHandcuff(prisonerController.handcuffSlotObj, 0);
+         
+         prisoner.characterCarryHandcuffsList.Add(gameObject);
+         
+         MoveHandcuff(prisoner.handcuffSlotObj, 0);
       }
       
       private void MoveHandcuff(GameObject target , float parentXPos)
@@ -56,13 +57,13 @@ namespace _GameCore.Scripts
             2,
             position.y,
             position.z
-         ), 1).SetEase(Ease.OutCirc));
+         ), 0.75f).SetEase(Ease.OutCirc));
          
          moveSequence.Append( obj.transform.DOLocalMove(new Vector3(
             parentXPos,
             localPosition.y,
             localPosition.z
-         ),1));
+         ),0.75f));
 
          obj.transform.rotation = target.transform.rotation;
       }

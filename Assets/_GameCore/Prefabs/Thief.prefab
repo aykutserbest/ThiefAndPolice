@@ -383,8 +383,8 @@ GameObject:
   - component: {fileID: 9210580389236690185}
   - component: {fileID: 648871240547249919}
   - component: {fileID: 600447031800592640}
-  - component: {fileID: 648871240547249917}
   - component: {fileID: 1700072843774481183}
+  - component: {fileID: 5320081043134657104}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Thief
@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5bd691ccb08b5429937373b2cac3df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   characterCarryHandcuffsList: []
   handcuffSlotObj: {fileID: 650305965181283879}
 --- !u!114 &648871240547249919
@@ -455,24 +456,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &648871240547249917
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648871240547249916}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1.13
-  m_Radius: 0.3
-  m_SlopeLimit: 45.5
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.55, z: 0}
 --- !u!65 &1700072843774481183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -484,8 +467,30 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0.051243782, y: 0.5513771, z: 0.01083976}
+--- !u!195 &5320081043134657104
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648871240547249916}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.2
+  m_Speed: 2
+  m_Acceleration: 12
+  avoidancePriority: 50
+  m_AngularSpeed: 150
+  m_StoppingDistance: 0.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.1
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &648890089484516526
 GameObject:
   m_ObjectHideFlags: 0
