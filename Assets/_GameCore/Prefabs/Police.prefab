@@ -422,8 +422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ddc0d0736d38c48825939f6fc91672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handcuffSlotObj: {fileID: 650305965181283879}
   characterCarryHandcuffsList: []
+  handcuffSlotObj: {fileID: 650305965181283879}
   prisonerList: []
   handcuffSlotObjXPos: 0
 --- !u!114 &648871240547249919
@@ -1450,7 +1450,7 @@ GameObject:
   - component: {fileID: 650305965181283880}
   m_Layer: 0
   m_Name: Slot1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1480,7 +1480,7 @@ GameObject:
   - component: {fileID: 650305965296458479}
   m_Layer: 0
   m_Name: HandcuffSlots
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

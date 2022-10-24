@@ -3,22 +3,21 @@ using UnityEngine;
 
 namespace _GameCore.Scripts
 {
-    public class ThiefController : CharacterControllerBase<ThiefController>
+    public class ThiefController : MonoBehaviour
     {
-        //public List<GameObject> characterCarryHandcuffsList  = new List<GameObject>();
+        public List<GameObject> characterCarryHandcuffsList  = new List<GameObject>();
         
+        public GameObject handcuffSlotObj;
+
         private void OnTriggerEnter(Collider other)
-        {Debug.Log("geldi");
+        {
             if (!other.CompareTag("Player")) return;
-            Debug.Log("if geçti geldi");
-            gameObject.GetComponent<BoxCollider>().isTrigger = false;
-            EventManager.onShackleThief?.Invoke(gameObject);
+            
+            GameObject o;
+            (o = gameObject).GetComponent<BoxCollider>().isTrigger = false;
+            EventManager.onShackleThief?.Invoke(o);
         }
         
-        public override void SetEmpySlotPos()
-        {
-            
-        }
     
     }
 }

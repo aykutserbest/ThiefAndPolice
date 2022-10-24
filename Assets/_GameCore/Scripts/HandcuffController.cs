@@ -33,12 +33,14 @@ namespace _GameCore.Scripts
          MoveHandcuff(PoliceController.Instance.handcuffSlotObj, PoliceController.Instance.handcuffSlotObjXPos);
       }
       
-      public void MoveToThief()
+      public void MoveToThief(GameObject prisoner)
       {
-         ThiefController.Instance.characterCarryHandcuffsList.Add(gameObject);
-         MoveHandcuff(ThiefController.Instance.handcuffSlotObj, 0);
+         var prisonerController = prisoner.GetComponent<ThiefController>();
+         PoliceController.Instance.characterCarryHandcuffsList.Remove(gameObject);
+         prisonerController.characterCarryHandcuffsList.Add(gameObject);
+         MoveHandcuff(prisonerController.handcuffSlotObj, 0);
       }
-
+      
       private void MoveHandcuff(GameObject target , float parentXPos)
       {
          Sequence moveSequence = DOTween.Sequence();

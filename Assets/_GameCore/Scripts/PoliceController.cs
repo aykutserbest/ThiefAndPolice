@@ -33,9 +33,9 @@ namespace _GameCore.Scripts
         
         private void GetThiefShackled(GameObject nextPrisoner)
         {
-            prisonerList.Add(nextPrisoner.gameObject);
+            prisonerList.Add(nextPrisoner);
             var lastHandcuff = characterCarryHandcuffsList.LastOrDefault();
-            if (lastHandcuff != null) lastHandcuff.GetComponent<HandcuffController>().MoveToThief();
+            if (lastHandcuff != null) lastHandcuff.GetComponent<HandcuffController>().MoveToThief(nextPrisoner);
         }
     }
     
