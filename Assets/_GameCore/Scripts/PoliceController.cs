@@ -23,10 +23,16 @@ namespace _GameCore.Scripts
             EventManager.onShackleThief -= GetThiefShackled;
         }
 
-        public override void SetEmpySlotPos()
+        public void IncreaseEmptySlotPos()
         {
             handcuffSlotObjXPos = handcuffSlotObj.transform.localPosition.y + (0.10f * m_multiplier);
             m_multiplier++;
+        }
+        
+        public void DecreaseEmptySlotPos()
+        {
+            handcuffSlotObjXPos = handcuffSlotObj.transform.localPosition.y - (0.10f * m_multiplier);
+            m_multiplier--;
         }
         
         private void GetThiefShackled(ThiefController nextPrisoner)
@@ -49,6 +55,11 @@ namespace _GameCore.Scripts
             }
             
             return gameObject.transform;
+        }
+
+        public void ClearPrisonList()
+        {
+            prisonerList.Clear();
         }
 
     }

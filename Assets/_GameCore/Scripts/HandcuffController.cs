@@ -26,17 +26,17 @@ namespace _GameCore.Scripts
          MoveToPolice();
       }
 
-      private void MoveToPolice()
+      public void MoveToPolice()
       {
          PoliceController.Instance.characterCarryHandcuffsList.Add(gameObject);
-         PoliceController.Instance.SetEmpySlotPos();
+         PoliceController.Instance.IncreaseEmptySlotPos();
          MoveHandcuff(PoliceController.Instance.handcuffSlotObj, PoliceController.Instance.handcuffSlotObjXPos);
       }
-      
+
       public void MoveToThief(ThiefController prisoner)
       {
          PoliceController.Instance.characterCarryHandcuffsList.Remove(gameObject);
-         
+         PoliceController.Instance.DecreaseEmptySlotPos();
          prisoner.characterCarryHandcuffsList.Add(gameObject);
          
          MoveHandcuff(prisoner.handcuffSlotObj, 0);

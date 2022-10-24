@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -46,10 +47,27 @@ namespace _GameCore.Scripts
 
         private void Update()
         {
-            if (_isFollow)
+            if (_isFollow && targetPosition)
             {
                 _thiefAgent.SetDestination(targetPosition.position);
             }
+        }
+
+        public void SetDestination(Transform targetPos)
+        {
+            targetPosition = targetPos;
+        }
+
+        public void CourtCountdown(float seconds)
+        {
+            StartCoroutine(DestroyThief(seconds));
+        }
+
+        private IEnumerator DestroyThief(float seconds)
+        {
+           yield return new WaitForSeconds(seconds);
+           characterCarryHandcuffsList[0].GetComponent<HandcuffController>().MoveToPolice();
+           Destroy(gameObject);
         }
     }
 }

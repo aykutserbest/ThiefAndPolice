@@ -23,7 +23,5 @@ namespace _GameCore.Scripts
             }
         }
 
-        public abstract void SetEmpySlotPos();
-
     }
 }
