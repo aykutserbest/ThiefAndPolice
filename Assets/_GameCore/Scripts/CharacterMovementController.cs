@@ -7,10 +7,10 @@ namespace _GameCore.Scripts
     {
         private PlayerInput _playerInput; 
         private CharacterController _controller;
-        private Animator _animator;
+        public Animator _animator;
         private Vector3 _moveJoystick;
     
-        [SerializeField]private float playerSpeed;
+        [SerializeField] private float playerSpeed;
     
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
     

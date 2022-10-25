@@ -16,7 +16,7 @@ namespace _GameCore.Scripts
 
         private bool _isFollow;
         
-        private bool _isPrison;
+        public bool _isPrison;
 
         private Transform targetPosition;
 

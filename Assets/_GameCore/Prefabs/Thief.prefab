@@ -381,10 +381,10 @@ GameObject:
   m_Component:
   - component: {fileID: 651181554410772298}
   - component: {fileID: 9210580389236690185}
-  - component: {fileID: 648871240547249919}
   - component: {fileID: 600447031800592640}
   - component: {fileID: 1700072843774481183}
   - component: {fileID: 5320081043134657104}
+  - component: {fileID: 2953048622978135874}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Thief
@@ -424,19 +424,6 @@ MonoBehaviour:
   id: 0
   characterCarryHandcuffsList: []
   handcuffSlotObj: {fileID: 650305965181283879}
---- !u!114 &648871240547249919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648871240547249916}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1eee4ab123ac214eb6b8f7ad4026596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 2
 --- !u!95 &600447031800592640
 Animator:
   serializedVersion: 3
@@ -491,6 +478,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2953048622978135874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648871240547249916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1baed063dcddd44bfa7ce7ea2c4c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &648890089484516526
 GameObject:
   m_ObjectHideFlags: 0
