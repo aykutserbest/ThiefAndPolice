@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace _GameCore.Scripts
@@ -17,7 +18,9 @@ namespace _GameCore.Scripts
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player")) return;
-            
+
+            if ( (_policeController.prisonerList!= null) && (!_policeController.prisonerList.Any())) return;
+
             _policeController.prisonerList[0].SetDestination(_areaPivot);
 
             for (int i = 0; i < _policeController.prisonerList.Count; i++)

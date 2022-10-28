@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +14,8 @@ namespace _GameCore.Scripts
         public List<GameObject> characterCarryHandcuffsList  = new List<GameObject>();
         
         public GameObject handcuffSlotObj;
+        
+        public GameObject chainObj;
 
         private bool _isFollow;
         
@@ -30,9 +33,12 @@ namespace _GameCore.Scripts
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player")) return;
+            if ( (PoliceController.Instance.characterCarryHandcuffsList!= null) && (!PoliceController.Instance.characterCarryHandcuffsList.Any())) return;
             if (_isPrison) return;
 
             _isPrison = true;
+            
+            chainObj.SetActive(true);
             
             EventManager.onShackleThief?.Invoke(this);
 
@@ -60,6 +66,7 @@ namespace _GameCore.Scripts
 
         public void CourtCountdown(float seconds)
         {
+            chainObj.SetActive(false);
             StartCoroutine(DestroyThief(seconds));
         }
 
